@@ -2,18 +2,16 @@
 Tools zur Benutzung von ecodms
 
 # Voraussetzungen
-Für die Ausführung des Installationsscripts muss curl installiert werden.
+Für die Ausführung des Installationsscripts muss curl installiert sein.
 Hierzu ist folgender Befehl auf der Konsole auszuführen:
 
-sudo apt install curl -y
+    sudo apt install curl -y
 
 # Durchführung der Installation
-Zur Ausführung des Scripts muss dies über den Befehl heruntergeladen werden:
-curl -Ls https://raw.githubusercontent.com/bigtracy/eco_tools/master/install_ecodms.sh > install_ecodms.sh
+Mit dem Folgenden Befehl wird die Installation automatisch herruntergeladen und gestartet:
 
-Danach müssen die Rechte angepasst werden, damit das Script ausführbar ist:
-chmod a+x install_ecodms.sh
+    bash <(curl -Ls https://raw.githubusercontent.com/bigtracy/eco_tools/master/install_ecodms.sh)
 
-Aufruf der Installation mit:
-./install_ecodms.sh
+Während des Setups werden die Locals angepast, hier bitte bei der auswahl *DE-de-UTF-8* auswählen.
+
 
