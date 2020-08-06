@@ -10,26 +10,27 @@ VERSION=$VERSION_ID
 ecodms_sources=""
 case "$ID" in
    "debian" )
-   case $VERSION in
-   "10" )	
-    ecodms_sources="deb http://www.ecodms.de/ecodms_180964/buster /"
-    ;;
-   "9" )	
-    ecodms_sources="deb http://www.ecodms.de/ecodms_180964/stretch /"
-    ;;
-  esac
-    ;;
+		case $VERSION in
+			"10" )	
+				ecodms_sources="deb http://www.ecodms.de/ecodms_180964/buster /"
+				;;
+			"9" )	
+				ecodms_sources="deb http://www.ecodms.de/ecodms_180964/stretch /"
+				;;
+		esac
+		;;
 	"ubuntu" )
-	ecodms_sources="deb http://www.ecodms.de/ecodms_180964/bionic /"
-    ;;
+		ecodms_sources="deb http://www.ecodms.de/ecodms_180964/bionic /"
+ 	   ;;
 
 	* )
-	echo "#################################################################"
-	echo "No suitable OS and/or Version for installation found. STOPPED!!!"
-	echo "#################################################################"
-	exit 8
-	;;
- esac
+		echo "#################################################################"
+		echo "No suitable OS and/or Version for installation found. STOPPED!!!"
+    	echo "Host System is $NAME $VERSION"
+		echo "#################################################################"
+		exit 8
+		;;
+esac
 
 echo "#################################################################"
 echo "Found $OS $VERSION. Good."
