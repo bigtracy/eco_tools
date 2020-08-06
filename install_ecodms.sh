@@ -57,7 +57,7 @@ $prefix apt install sudo gnupg2 -y
 
 # prepare ecodms installation
 $prefix wget -O - http://www.ecodms.de/gpg/ecodms.key | sudo apt-key add -
-$prefix echo $ecodms > /etc/apt/sources.list.d/ecodms.list
+$prefix echo $ecodms_sources > /etc/apt/sources.list.d/ecodms.list
 $prefix apt update
 
 # install ecodmsserver
