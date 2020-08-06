@@ -2,15 +2,14 @@
 
 # check OS
 . /etc/os-release
-OS=$NAME
+ID=$ID
 VERSION=$VERSION_ID
 
-OS="Debian "
 
 # Setting Repo for ecodms
 ecodms_sources=""
-case "$OS" in
-   "Debian GNU/Linux" )
+case "$ID" in
+   "debian" )
    case $VERSION in
    "10" )	
     ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/buster /\""
@@ -20,7 +19,7 @@ case "$OS" in
     ;;
   esac
     ;;
-	"Ubuntu" )
+	"ubuntu" )
 	ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/bionic /\""
     ;;
 
