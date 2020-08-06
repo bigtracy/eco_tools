@@ -1,7 +1,41 @@
 #!/bin/bash
 
+# check OS
+. /etc/os-release
+OS=$NAME
+VERSION=$VERSION_ID
+
+OS="Debian "
+
 # Setting Repo for ecodms
-ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/buster /\""
+ecodms_sources=""
+case "$OS" in
+   "Debian GNU/Linux" )
+   case $VERSION in
+   "10" )	
+    ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/buster /\""
+    ;;
+   "9" )	
+    ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/stretch /\""
+    ;;
+  esac
+    ;;
+	"Ubuntu" )
+	ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/bionic /\""
+    ;;
+
+	* )
+	echo "#################################################################"
+	echo "No suitable OS and/or Version for installation found. STOPPED!!!"
+	echo "#################################################################"
+	exit 8
+	;;
+ esac
+
+echo "#################################################################"
+echo "Found $OS $VERSION. Good."
+echo "#################################################################"
+
 # Read username to check for use of sudo
 username=$(whoami)
 prefix = ""
