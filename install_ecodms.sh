@@ -12,15 +12,15 @@ case "$ID" in
    "debian" )
    case $VERSION in
    "10" )	
-    ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/buster /\""
+    ecodms_sources="deb http://www.ecodms.de/ecodms_180964/buster /"
     ;;
    "9" )	
-    ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/stretch /\""
+    ecodms_sources="deb http://www.ecodms.de/ecodms_180964/stretch /"
     ;;
   esac
     ;;
 	"ubuntu" )
-	ecodms_sources="\"deb http://www.ecodms.de/ecodms_180964/bionic /\""
+	ecodms_sources="deb http://www.ecodms.de/ecodms_180964/bionic /"
     ;;
 
 	* )
