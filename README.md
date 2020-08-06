@@ -12,6 +12,8 @@ Mit dem Folgenden Befehl wird die Installation automatisch herruntergeladen und 
 
     bash <(curl -Ls https://raw.githubusercontent.com/bigtracy/eco_tools/master/install_ecodms.sh)
 
-Während des Setups werden die Locals angepast, hier bitte bei der auswahl *DE-de-UTF-8* auswählen.
+Während des Setups werden die Locals angepast:
 
+![Auswahl der Locales](https://raw.githubusercontent.com/bigtracy/eco_tools/master/pics/locale.png?raw=true)
+![](https://raw.githubusercontent.com/bigtracy/eco_tools/master/pics/locale2.png?raw=true)
 
