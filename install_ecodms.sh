@@ -33,7 +33,7 @@ case "$ID" in
 esac
 
 echo "#################################################################"
-echo "Found $OS $VERSION. Good."
+echo "Found $NAME $VERSION. Good."
 echo "#################################################################"
 
 # Read username to check for use of sudo
