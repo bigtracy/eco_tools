@@ -9,24 +9,24 @@ VERSION=$VERSION_ID
 # Setting Repo for ecodms
 ecodms_sources=""
 case "$ID" in
-   "debian" )
+	"debian" )
 		case $VERSION in
-			"10" )	
+			"10" )
 				ecodms_sources="deb http://www.ecodms.de/ecodms_180964/buster /"
 				;;
-			"9" )	
+			"9" )
 				ecodms_sources="deb http://www.ecodms.de/ecodms_180964/stretch /"
 				;;
 		esac
 		;;
 	"ubuntu" )
 		ecodms_sources="deb http://www.ecodms.de/ecodms_180964/bionic /"
- 	   ;;
+		;;
 
 	* )
 		echo "#################################################################"
 		echo "No suitable OS and/or Version for installation found. STOPPED!!!"
-    	echo "Host System is $NAME $VERSION"
+		echo "Host System is $NAME $VERSION"
 		echo "#################################################################"
 		exit 8
 		;;
@@ -41,10 +41,10 @@ username=$(whoami)
 prefix = ""
 if [[ $username != "root" ]] 
 then
-		prefix="sudo "
-		echo "###################################################"
-		echo "Not root, so run with sudo"
-		echo "###################################################"
+	prefix="sudo "
+	echo "###################################################"
+	echo "Not root, so run with sudo"
+	echo "###################################################"
 fi
 
 # needed configs for succesfull installation
