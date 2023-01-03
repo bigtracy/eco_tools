@@ -41,17 +41,36 @@ username=$(whoami)
 prefix = ""
 if [[ $username != "root" ]] 
 then
-	prefix="sudo "
-	echo "###################################################"
-	echo "Not root, so run with sudo"
-	echo "###################################################"
+###################################################"
+
+		if ! dpkg-query -W -f='${Status}' sudo  | grep "ok installed"; 
+			then 
+				echo "###################################################"
+				echo "Not root and sudo not installed. STOPPED!!!"
+				echo "---------------------------------------------------"
+				echo ""
+				echo " Please install sudo "
+				echo ""
+				echo "###################################################"
+			exit 8;
+		fi
+
+		prefix="sudo "
+		echo "###################################################"
+		echo "Not root, so run with sudo"
+		echo "###################################################"
+
 fi
+
+
 
 # needed configs for succesfull installation
 $prefix apt update
 $prefix export LANG=de_DE.UTF8
-$prefix dpkg-reconfigure locales
-$prefix dpkg-reconfigure tzdata
+sudo update-locale LANG=de_DE.UTF8
+ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+dpkg-reconfigure -f noninteractive tzdata
+
 
 $prefix apt upgrade -y
 $prefix apt install sudo gnupg2 -y
